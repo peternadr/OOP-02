@@ -1,4 +1,6 @@
-﻿namespace OOP_02;
+﻿using OOP_02.SmartDeliveryManagementSystem;
+
+namespace OOP_02;
 
 internal class Program
 {
@@ -35,6 +37,16 @@ internal class Program
         // Makes the code easier to maintain.
 
         #endregion
+
+        DeliveryAdress deliveryAdress = new DeliveryAdress("alex","st30", 10);
+        Shipment shipment1 = new Shipment(deliveryAdress, "peter", "iphone", 2, 800);
+        Shipment shipment2 = new Shipment(deliveryAdress, "nader", "iphone", 5, 900);
+        DeliveryCenter deliveryCenter = new DeliveryCenter("amazon");
+        deliveryCenter.AddShipment(shipment1);
+        deliveryCenter.AddShipment(shipment2);
+        deliveryCenter.printAll();
+        deliveryCenter.RemoveShipment("po");
+        deliveryCenter.printAll();
 
         #endregion
     }
